@@ -4,7 +4,7 @@ A frontend application demonstrating browser screen-sharing capabilities, media 
 
 ## 🚀 Live Demo
 
-[Live Deployment](#) _(Add your deployment URL here)_
+[https://screen-share-project.netlify.app/](#)
 
 ## 📋 Features
 
@@ -260,15 +260,15 @@ _Retry/Back flow after stream ends_
 
 ### Manual Testing Checklist
 
-- [ ] Start screen sharing successfully
-- [ ] Cancel screen picker
-- [ ] Deny screen sharing permission
-- [ ] Stop sharing from browser UI
-- [ ] Retry after stopping
-- [ ] Navigate back to home
-- [ ] Test on unsupported browser
-- [ ] Test responsive layout
-- [ ] Verify no memory leaks (check DevTools)
+- ✅ Start screen sharing successfully
+- ✅ Cancel screen picker
+- ✅ Deny screen sharing permission
+- ✅ Stop sharing from browser UI
+- ✅ Retry after stopping
+- ✅ Navigate back to home
+- ✅ Test on unsupported browser
+- ✅ Test responsive layout
+- ✅ Verify no memory leaks (check DevTools)
 
 ### Browser Testing
 
