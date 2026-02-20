@@ -4,7 +4,7 @@ A frontend application demonstrating browser screen-sharing capabilities, media 
 
 ## 🚀 Live Demo
 
-[https://screen-share-project.netlify.app/](#)
+[Live Demo](https://screen-share-project.netlify.app/)
 
 ## 📋 Features
 
