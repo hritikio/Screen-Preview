@@ -20,7 +20,7 @@ type Props={
 
 export default function Button({onClick,children,disabled,size}:Props) {
     return(
-        <button disabled={disabled} onClick={onClick} className={`  ${sizeClasses[size]} bg-[#000] text-[#fff] rounded-md ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#333]'}`} >
+        <button disabled={disabled} onClick={onClick} className={` ${sizeClasses[size]} bg-[#000] text-[#fff] rounded-md ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#333]'}`} >
             {children}
         </button>
     )
