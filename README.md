@@ -243,7 +243,7 @@ useEffect(() => {
 
 ### Homepage
 
-![Homepage](./screenshots/homepage.png)
+![Homepage](./screenshots/Homepage.png)
 _Homepage with browser support check_
 
 ### Screen Test - Active
