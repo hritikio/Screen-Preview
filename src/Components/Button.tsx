@@ -1,27 +1,36 @@
- type Size= "sm" |"md"|"lg";
+type Size = "sm" | "md" | "lg";
 
+const sizeClasses: Record<Size, string> = {
+  sm: "px-4 py-2 text-sm",
+  md: "px-5 py-2.5 text-base",
+  lg: "px-8 py-3 text-base",
+};
 
- const sizeClasses: Record<Size, string> = {
-  sm: "px-[8px] py-[6px]",
-  md: "px-[16px] py-[10px]",
-  lg: "px-[24px] py-[14px]",
+type Props = {
+  onClick: () => void;
+  children: React.ReactNode;
+  disabled?: boolean;
+  size?: Size;
 };
 
 
-
-
-type Props={
-    onClick:()=>void;
-    children: React.ReactNode;
-    disabled?:boolean,
-    size: Size
-   
-}
-
-export default function Button({onClick,children,disabled,size}:Props) {
-    return(
-        <button disabled={disabled} onClick={onClick} className={` ${sizeClasses[size]} bg-[#000] text-[#fff] rounded-md ${disabled ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#333]'}`} >
-            {children}
-        </button>
-    )
+export default function Button({
+  onClick,
+  children,
+  disabled = false,
+  size = "md",
+}: Props) {
+  return (
+    <button
+      disabled={disabled}
+      onClick={onClick}
+      className={`${sizeClasses[size]} bg-slate-900 text-white rounded-md font-medium transition-all ${
+        disabled
+          ? "opacity-40 cursor-not-allowed"
+          : "hover:bg-slate-800 active:scale-[0.98] shadow-sm hover:shadow focus:outline-none focus:ring-2 focus:ring-slate-900 focus:ring-offset-2"
+      }`}
+    >
+      {children}
+    </button>
+  );
 }

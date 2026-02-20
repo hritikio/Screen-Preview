@@ -27,32 +27,29 @@ export const useScreenShare = () => {
         },
         audio: false,
       });
+
       streamRef.current = mediaStream;
       setStream(mediaStream);
       setstatus("granted");
 
-      console.log("Screen share started", mediaStream.getVideoTracks());
-
       const [track] = mediaStream.getVideoTracks();
 
-      console.log("Track is ", track);
-      console.log("track on ended is ", track.onended);
-      console.log("track setting is ", track.getSettings());
-
-
       track.onended = () => {
-        console.log("Screen share stopped");
         cleanup();
         setstatus("stopped");
       };
     } catch (err: any) {
       if (err?.name === "NotAllowedError") {
         setstatus("denied");
-      } else if (err?.name === "AbortError") {
+        setError("Screen sharing permission was denied.");
+      } else if (err?.name === "AbortError" || err?.name === "NotFoundError") {
         setstatus("cancelled");
+        setError("Screen selection was cancelled.");
       } else {
         setstatus("error");
-        setError("Unknown screen sharing error");
+        setError(
+          `Screen sharing error: ${err?.message || "Unknown error occurred"}`,
+        );
       }
     }
   }, []);
